@@ -5,11 +5,13 @@
 
 services:
   - type: web
-    name: day12-agent
+    name: day12-agent-tran-thi-thu-hien
     runtime: docker
     dockerfilePath: ./Dockerfile
     plan: free
+    region: singapore
     healthCheckPath: /health
+    maxShutdownDelaySeconds: 30
     envVars:
       - key: AGENT_API_KEY
         sync: false
@@ -21,11 +23,14 @@ services:
         value: "10.0"
       - key: REDIS_URL
         fromService:
-          name: day12-redis
-          type: redis
+          name: day12-key-value-tran-thi-thu-hien
+          type: keyvalue
           property: connectionString
 
-  - type: redis
-    name: day12-redis
+  - type: keyvalue
+    name: day12-key-value-tran-thi-thu-hien
     plan: free
+    region: singapore
     ipAllowList: []
+    maxmemoryPolicy: allkeys-lru
+    persistenceMode: off
