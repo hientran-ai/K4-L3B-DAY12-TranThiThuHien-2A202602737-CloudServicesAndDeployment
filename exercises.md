@@ -31,9 +31,9 @@ nêu **hai** việc bạn làm được với dòng log đó mà `print("đã tr
 không làm được.
 
 > Một dòng log tôi thu được khi chạy test `/ask` là:
-> `{"event": "ask_completed", "level": "info", "timestamp": "2026-09-29T00:00:00+00:00", "user_id": "sv-test", "tokens_in": 4, "tokens_out": 35, "cost_usd": 0.0000216}`.
+> `{"event": "ask_completed", "level": "info", "timestamp": "2026-09-29T15:04:25.478613+00:00", "user_id": "2A202602737", "tokens_in": 5, "tokens_out": 37, "cost_usd": 2.295e-05}`.
 > Vì đây là JSON có trường rõ ràng, tôi có thể lọc toàn bộ request của
-> `user_id=sv-test` để điều tra lỗi và cộng `cost_usd` để theo dõi/cảnh báo chi
+> `user_id=2A202602737` để điều tra lỗi và cộng `cost_usd` để theo dõi/cảnh báo chi
 > phí. Chuỗi `print("đã trả lời xong")` không chứa dữ liệu có cấu trúc để thực
 > hiện hai việc đó.
 
